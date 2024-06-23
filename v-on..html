@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>V-on Vue.js のサンプル</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <style>
+      .pos-left{
+        margin-left: auto;
+        margin-right: 675px;
+        text-align: right;
+      }
+      table{
+        font-size: 24px;
+        font-weight: plain;
+        margin-left: auto;
+      }
+      tr{
+        border:1px dashed black;
+        font-size: 32px;
+        font-weight: bold;
+        color:white;
+        text-align: left;
+        width: 300px;
+        height: 36px;
+      }
+      td{
+        border:1px solid black;
+        width: 300px;
+        height: 36px;
+      }
+      tbody{
+        font-size: 24px;
+        color:black;
+        font-weight: plain;
+      }
+      .blue{
+        font-size: 24px;
+        font-weight: bold;
+        color:blue;
+      }
+      .green{
+        font-size: 24px;
+        font-weight: bold;
+        color:green;
+      }
+      .t-head{
+        color:white;
+        font-size: 32px;
+        background: rgb(60, 57, 57);
+      }
+    </style>
+    <h1 class="bg-primary text-white display-4 px-3" >Vue3 v-on</h1>
+    <div id="app">
+      <button v-on:click="onClick">マウスをクリック</button>
+      <p>{{ now }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script>
+    <script>
+        const appdata = {
+        data: () => ({
+          now: '-'
+        }),
+        methods: {
+            onClick: function() {
+                this.now = new Date().toLocaleString('ja-JP');
+            }
+        }
+      }
+      Vue.createApp(appdata).mount('#app');
+    </script>
+  </body>
+</html>
