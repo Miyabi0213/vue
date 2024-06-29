@@ -19,7 +19,9 @@
 </head>
 <body>
   <div id="components-demo">
-    <button-counter></button-counter>
+    <button-counter></button-counter><br>
+    <button-counter></button-counter><br>
+    <button-counter></button-counter><br>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js"></script>
@@ -34,7 +36,7 @@
       },
       template: `
         <button v-on:click="count++">
-          カウント {{ count }} 
+          count {{ count }} 
         </button>`
     });
 
